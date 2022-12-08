@@ -3,7 +3,6 @@ import DatePicker from 'react-datepicker';
 import { useState, useEffect } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import './App.css';
-import { factory } from 'typescript';
 
 function App() {
 	const [startDate, setStartDate] = useState(new Date());
