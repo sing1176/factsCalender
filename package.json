@@ -17,7 +17,7 @@
 		"react-scripts": "^5.0.1",
 		"typescript": "^4.9.4",
 		"web-vitals": "^2.1.4",
-		"homepage": "https://sing1176.github.io/factsCalender/"
+		"homepage": "https://sing1176.github.io/factsCalender"
 	},
 	"scripts": {
 		"start": "react-scripts start",

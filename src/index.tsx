@@ -14,6 +14,7 @@ root.render(
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<SplashScreen />} />
+				<Route path="/factsCalender" element={<SplashScreen />} />
 				<Route path="/home" element={<App />} />
 				<Route path="/favfacts" element={<FavFacts />} />
 			</Routes>
