@@ -16,8 +16,7 @@
 		"react-router-dom": "^6.4.5",
 		"react-scripts": "^5.0.1",
 		"typescript": "^4.9.4",
-		"web-vitals": "^2.1.4",
-		"homepage": "http://sing1176.github.io/factsCalender"
+		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
 		"start": "react-scripts start",
