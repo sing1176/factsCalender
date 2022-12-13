@@ -10,6 +10,7 @@ function App() {
 	const [month, setMonth] = useState(startDate.getMonth() + 1);
 	const [day, setDay] = useState(startDate.getDate());
 
+	const [dislayError, setDislayError] = useState(false);
 	const [favFactsList, setFavFactsList] = useState([] as string[]);
 	const [fact, setFact] = useState('');
 	const [saved, setSaved] = useState(false);
@@ -20,10 +21,31 @@ function App() {
 		getFacts();
 	}, [startDate]);
 
+	const ErrorCard = () => {
+		return (
+			<div className="flex flex-col justify-center items-center">
+				<h1 className="text-2xl">Oh oh something went wrong</h1>
+				<button
+
+					className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
+				>
+					Try again
+				</button>
+			</div>
+		);
+	};
+
+
+
 	const getFacts = async () => {
-		const response = await fetch(url);
-		const data = await response.text();
-		setFact(data);
+		try {
+			const response = await fetch(url);
+			const data = await response.text();
+			setFact(data);
+		} catch (error) {
+			console.log(error);
+			setDislayError(true);
+		}
 	};
 
 	const handleDayChange = (date: Date) => {
@@ -66,7 +88,8 @@ function App() {
 				/>
 			</div>
 			<div className="flex justify-center">
-				<FactCard fact={fact} saved={saved} setSaved={setSaved} />
+
+				{dislayError ? <ErrorCard /> : <FactCard fact={fact} saved={saved} setSaved={setSaved} />}
 			</div>
 		</div>
 	);
