@@ -25,17 +25,16 @@ function App() {
 		return (
 			<div className="flex flex-col justify-center items-center">
 				<h1 className="text-2xl">Oh oh something went wrong</h1>
-				<button
-
-					className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
-				>
+				<button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
 					Try again
 				</button>
 			</div>
 		);
 	};
 
-
+	function isEmpty(str: string) {
+		return !str || 0 === str.length;
+	}
 
 	const getFacts = async () => {
 		try {
@@ -88,8 +87,13 @@ function App() {
 				/>
 			</div>
 			<div className="flex justify-center">
-
-				{dislayError ? <ErrorCard /> : <FactCard fact={fact} saved={saved} setSaved={setSaved} />}
+				{dislayError ? (
+					<ErrorCard />
+				) : isEmpty(fact) ? (
+					<ErrorCard />
+				) : (
+					<FactCard fact={fact} saved={saved} setSaved={setSaved} />
+				)}
 			</div>
 		</div>
 	);
