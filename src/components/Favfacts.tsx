@@ -59,7 +59,7 @@ const Favfacts = () => {
 					No favorites yet
 				</h1>
 			) : (
-				<h1>Favorites</h1>
+				<h1 className='text-3xl text-center mb-10'>Favorites</h1>
 			)}
 			<div className="flex flex-col justify-center  items-center space-y-4 ">
 				{facts.map((fact: string) => (

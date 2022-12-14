@@ -1,6 +1,4 @@
 import React from 'react';
-import calender from '../assets/calender.png';
-
 const SplashScreen = () => {
 	return (
 		<div className="bg-indigo-700 text-white font-kalam h-screen max-w-screen flex flex-col justify-center items-center p-8">

@@ -11,7 +11,6 @@ function App() {
 	const [day, setDay] = useState(startDate.getDate());
 
 	const [dislayError, setDislayError] = useState(false);
-	const [favFactsList, setFavFactsList] = useState([] as string[]);
 	const [fact, setFact] = useState('');
 	const [saved, setSaved] = useState(false);
 
